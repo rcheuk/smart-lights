@@ -1,0 +1,170 @@
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6">
+                <div class="card">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-xs-5">
+                                <div class="icon-big icon-warning text-center">
+                                    <i class="fa fa-user"></i>
+                                </div>
+                            </div>
+                            <div class="col-xs-7">
+                                <div class="numbers">
+                                    <p>Dispatched Firefighters</p>
+                                    6
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <hr />
+                            <div class="stats">
+                                <i class="ti-reload"></i> Updated now
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-xs-5">
+                                <div class="icon-big icon-success text-center">
+                                    <i class="ti-stats-up"></i>
+                                </div>
+                            </div>
+                            <div class="col-xs-7">
+                                <div class="numbers">
+                                    <p>Highest Recorded</p>
+                                    160° F
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <hr />
+                            <div class="stats">
+                                <i class="ti-reload"></i> Updated now
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-xs-5">
+                                <div class="icon-big icon-info text-center">
+                                    <i class="fa fa-tint"></i>
+                                </div>
+                            </div>
+                            <div class="col-xs-7">
+                                <div class="numbers">
+                                    <p>Inside Humidity</p>
+                                    55
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <hr />
+                            <div class="stats">
+                                <i class="ti-reload"></i> Updated now
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card">
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-xs-5">
+                                    <div class="icon-big icon-warning text-center">
+                                        <i class="fa fa-sun-o"></i>
+                                    </div>
+                                </div>
+                                <div class="col-xs-7">
+                                    <div class="numbers">
+                                        <p>Outside Weather</p>
+                                        89°, Dry and Windy
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="footer">
+                                <hr />
+                                <div class="stats">
+                                    <i class="ti-timer"></i> 30 mins ago
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Most Recent Incident</h4>
+                        <p class="category">Updated 1s ago</p>                        
+                    </div>
+                    <div class="content">
+                        <ngui-map zoom="13" center="38.8951,-77.0367" >
+                        <marker [position]="[38.89783,-77.01159]"></marker>
+                            <map-circle
+                                [center]="{lat: 38.89783, lng: -77.01159}">
+                            </map-circle>
+                        </ngui-map>
+                        <div class="footer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card ">
+                    <div class="header">
+                        <h4 class="title">Search Best Routes<span class="btn btn-success pull-right"><i class="ti-reload"></i></span></h4>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th *ngFor="let cell of tableData1.headerRow">{{ cell }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let row of tableData1.dataRows">
+                                    <td *ngFor="let cell of row">{{cell}}</td>
+                                    <td><a class="btn btn-success" (click)="selectRoute(row[0])"><i class="fa fa-check"></i>Select Route</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Average Response Time</h4>
+                        <p class="category">24 Hours performance</p>
+                    </div>
+                    <div class="content">
+                        <div id="chartHours" class="ct-chart"></div>
+                        <div class="footer">
+                            <div class="chart-legend">
+                                <i class="fa fa-circle text-info"></i> EMT
+                                <i class="fa fa-circle text-danger"></i> Police
+                                <i class="fa fa-circle text-warning"></i> Firefighters
+                            </div>
+                            <hr>
+                            <div class="stats">
+                                <i class="ti-reload"></i> Updated 3 minutes ago
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

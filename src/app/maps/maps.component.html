@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    <div class="card card-map">
+        <div class="header">
+            <h4 class="title">Google Maps</h4>
+        </div>
+        <ngui-map zoom="13" center="38.8951,-77.0367" >
+         <marker [position]="[38.8951,-77.0367]"></marker>
+           <map-circle
+               [center]="{lat: 38.8951, lng: -77.0367}">
+           </map-circle>
+       </ngui-map>
+    </div>
+</div>
