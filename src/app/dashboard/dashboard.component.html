@@ -19,7 +19,7 @@
                         <div class="footer">
                             <hr />
                             <div class="stats">
-                                <i class="ti-reload"></i> Updated now
+                                <i class="ti-reload"></i> Updated 30 mins ago
                             </div>
                         </div>
                     </div>
@@ -37,14 +37,15 @@
                             <div class="col-xs-7">
                                 <div class="numbers">
                                     <p>Highest Recorded</p>
-                                    160° F
+                                    {{temp}}° F
                                 </div>
                             </div>
                         </div>
                         <div class="footer">
                             <hr />
                             <div class="stats">
-                                <i class="ti-reload"></i> Updated now
+                                Current Temp: {{currentTemp}}° F <br/>                                    
+                                <i class="ti-reload"></i> Updates every 5 seconds
                             </div>
                         </div>
                     </div>
@@ -62,14 +63,14 @@
                             <div class="col-xs-7">
                                 <div class="numbers">
                                     <p>Inside Humidity</p>
-                                    55
+                                    {{humidity}}
                                 </div>
                             </div>
                         </div>
                         <div class="footer">
                             <hr />
                             <div class="stats">
-                                <i class="ti-reload"></i> Updated now
+                                <i class="ti-reload"></i> Updates every 5 seconds
                             </div>
                         </div>
                     </div>
@@ -81,20 +82,25 @@
                             <div class="row">
                                 <div class="col-xs-5">
                                     <div class="icon-big icon-warning text-center">
-                                        <i class="fa fa-sun-o"></i>
+                                        <i class="fa fa-fire"></i>
                                     </div>
                                 </div>
                                 <div class="col-xs-7">
                                     <div class="numbers">
-                                        <p>Outside Weather</p>
-                                        89°, Dry and Windy
+                                        <p>Fire Presence</p>
+                                        <div *ngIf="fire" class="text-danger">
+                                            <i class="fa fa-fire"></i> Yes
+                                        </div>
+                                        <div *ngIf="!fire" class="text-info">
+                                            <i class="fa fa-smile-o"></i> Safe
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="footer">
                                 <hr />
                                 <div class="stats">
-                                    <i class="ti-timer"></i> 30 mins ago
+                                    <i class="ti-reload"></i> Updates every 5 seconds
                                 </div>
                             </div>
                         </div>

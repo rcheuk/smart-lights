@@ -5,7 +5,7 @@
             <div class="icon-big icon-warning text-center">
                     <i class="fa fa-lightbulb-o fa-3x"></i>
                 </div>
-            Smart Lights
+            Fire Sense
         </a>
     </div>
     <ul class="nav">
@@ -37,10 +37,28 @@
                 </a>
             </li>
             <li class="divider" *ngIf="isNotMobileMenu()"></li>
-        <li *ngFor="let menuItem of menuItems" routerLinkActive="active" class="{{menuItem.class}}">
-            <a [routerLink]="[menuItem.path]">
-                <i class="{{menuItem.icon}}"></i>
-                <p>{{menuItem.title}}</p>
+        <li>
+            <a>
+                <i class="ti-dashboard"></i>
+                <p>Dashboard</p>
+            </a>
+        </li>
+        <li>
+            <a>
+                <i class="ti-pie-chart"></i>
+                <p>Insights</p>
+            </a>
+        </li>
+        <li>
+            <a class="disabled">
+                <i class="ti-map"></i>
+                <p>Map Overview</p>
+            </a>
+        </li>
+        <li>
+            <a class="">
+                <i class="ti-alert"></i>
+                <p>Notifications</p>
             </a>
         </li>
     </ul>
